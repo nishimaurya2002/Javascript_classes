@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+        img{
+            width:300px;
+            height:300px;
+        }
+    </style>
+</head>
+<body>
+    <img src="image/2.jpg" id="im1">
+    <button onclick="prev()">prev</button>
+    <button onclick="next()">Next</button>
+    <script>
+        let arr = ["3.jpg", "4.jpg", "5.jpg", "6.jpg"];
+        let item = 0;
+        let img1 = document.getElementById("im1");
+
+        const slideImage = () => {
+            img1.src = "image/" + arr[item];
+        };
+
+        const next = () => {
+            item = (item + 1) % arr.length;
+            slideImage();
+        };
+
+        const prev = () => {
+            item = (item - 1 + arr.length) % arr.length;
+            slideImage();
+        };
+
+        // Initial slide
+        slideImage();
+    </script>
+</body>
+</html>

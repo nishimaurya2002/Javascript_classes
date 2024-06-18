@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <img src="image/offblub.png" alt="" id="im" height="300px" width="300px" style="object-fit: contain;"><br>
+     <input type="submit" id="btn" value="ON"onclick="blub()" style="background-color: green; color: #fff; border:2px solid red">
+    <script>
+       let blub=()=>{
+         let image=document.querySelector("#im");
+         let b=document.querySelector("#btn");
+         if(b.value=="ON"){
+            image.src="image/onblub.png";
+            b.value="OFF"
+            b.style.background="red";
+            b.style.color="#fff";
+            b.style.border="2px solid green";
+         }
+         else{
+            image.src="image/offblub.png";
+            b.value="ON"
+            b.style.background="green";
+            b.style.color="#fff";
+            b.style.border="2px solid red";
+         }
+       }
+    </script>
+</body>
+</html>

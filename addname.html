@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    text1<input type="text" id="t1">
+    text2<input type="text" id="t2">
+    <input type="submit" onclick="sum()" value="Get Result">
+    <h1 id="result"></h1>
+    <script>
+        let sum=()=>{
+            let text1=document.querySelector("#t1").value;
+            let text2=document.querySelector("#t2").value;
+            //alert(text1+text2);
+            let res=document.querySelector("#result");
+            res.innerHTML="This is  result is add name:"+"<mark>"+text1+text2+"</mark>";
+        }
+    </script>
+</body>
+</html>

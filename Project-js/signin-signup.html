@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            width:100vw;
+            height:100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width:600px;
+        }
+        .container div{
+            width:350px;
+            height:350px;
+            background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+            border-radius:30px ;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        h2{
+            font-size:20px;
+            padding-top:40px;
+        }
+        form{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 0 30px;
+            height: 100%;
+            text-align: center;
+       }
+       .input{
+              width:300px;
+              height:40px;
+              margin: 7px 0px;
+              border-radius: 10px;
+              border: 1px solid #000;
+              padding: 0px 5px;
+              box-shadow: 0px 0px 0px #000;
+              background-color: #fff;
+        }
+        input{
+            padding: 10px 60px;
+            background-color: rgb(232, 10, 102);
+            border: none;
+            border-radius: 20px;
+            color:#fff;
+            margin-top:20px;
+        }
+        a{
+            text-decoration: none;
+            color:#232323;
+        }
+        #form1{
+            display: block;
+        }
+        #form2{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+   <div class="container">
+    <div id="form-box1" >
+        <h2>Sign Up</h2>
+        <form id="form1">
+        <input type="text" class="input" placeholder="Username">
+        <input type="email" class="input" placeholder="Email">
+        <input type="password" class="input" placeholder="Password">
+        
+    </form>
+    <input type="submit" id="btn1" onclick="f1()" value="SIGN UP">
+    </div>
+       <div id="form-box2">
+        <h2>Sign In</h2>
+         <form id="form2">
+            <input type="email" class="input" placeholder="Email">
+            <input type="password" class="input" placeholder="Password">
+            <a href="#">Forgot your password?</a>
+            
+        </form>
+        <input  type="submit" id="btn2" onclick="f2()" value="SIGN IN">
+    </div>
+   </div>
+   <script>
+     const singup=document.querySelector("#form2");
+     const singin=document.querySelector("#form1");
+     const f1=()=>{
+        
+        singin.style.display="block";
+        singup.style.display="none";
+     }
+     const f2=()=>{
+        singin.style.display="none";
+        singup.style.display="block";
+     }
+   </script>
+</body>
+</html>

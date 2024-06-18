@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width:300px;
+            height:300px;
+        }
+    </style>
+</head>
+<body>
+    <img src="image/13.jpg" alt="" id="im">
+    <!-- <img src="image/1.jpg" alt="" id="im2"> -->
+    <button id="btn1">Swap</button>
+    <button id="btn2">Start</button>
+    <button id="btn3">Stop</button>
+    <script>
+        let img1=document.querySelector("#im");
+        let b1=document.querySelector("#btn1");
+        b1.addEventListener("click",function(){
+            if(img1.src.endsWith("13.jpg")){
+                img1.src="image/3.jpg";
+                img1.style.border="9px solid #00f";
+            }
+            else{
+                img1.src="image/13.jpg";
+                img1.style.border="2px solid #ff0";
+            }  
+        });
+    </script>
+</body>
+</html>

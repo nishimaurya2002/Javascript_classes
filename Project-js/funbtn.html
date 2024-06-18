@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0px;
+			padding:0px;
+			box-sizing:border-box;
+        }
+        body{ 
+            width:100vw;
+            height:100vh;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+        img{
+            width:200px;
+            height:200px;
+            border:10px solid darkmagenta;
+            border-radius: 50%;
+            object-fit: cover;
+            padding: 10px;
+            animation: fun linear infinite;
+        }
+        @keyframes fun{
+					from{
+						transform:rotate(-720deg);
+					}
+				}
+
+       /* button{
+        width:50px;
+        height:50px;
+        border-radius: 50%;
+        color:#fff;
+        background-color:darkslategrey ;
+       } */
+      input{
+        width:50px;
+        height:50px;
+        border-radius: 50%;
+        color:#fff;
+        background-color:darkslategrey ;
+      }
+     input:active{
+        box-shadow: 2px 4px 5px darkmagenta;
+     }
+
+     div{
+        margin: 20px 0px;
+        
+     }
+    </style>
+</head>
+<body>
+    <img src="image/fan.png" id="im">
+    <div>
+        <input type="submit"onclick="funOn()" id="btn" value="ON">
+        <!-- <button onclick="funOff()">OFF</button> -->
+        <input type="submit" onclick="fun1()" id="input1" value="1">
+        <!-- <button onclick="fun2()">2</button>
+        <button onclick="fun3()">3</button>
+        <button onclick="fun4()">4</button> -->
+    </div>
+    <script>
+       let f=document.getElementById("im");
+      
+       function funOn(){
+           let b=document.getElementById("btn");
+           if(b.value=="ON"){
+            f.style.animationDuration=3+'s';
+            b.value="OFF";
+            b.style.background="teal";
+            b.style.color="#fff";
+            b.style.border="2px solid green";
+         }
+         else{
+            b.value="ON";
+            f.style.animationDuration=0+'s';
+            b.style.background="pink";
+            b.style.color="#fff";
+            b.style.border="2px solid teal";
+         }
+       }
+    //    function funOff(){
+    //        f.style.animationDuration=0+'s';
+    //    }
+       function fun1(){
+        let value1=document.getElementById("input1");
+        if(value1.value=="1"){
+            f.style.animationDuration=2+'s';
+            value1.value="2";
+            value1.style.background="teal";
+            value1.style.color="#fff";
+            value1.style.border="2px solid green";
+         }
+         else if(value1.value=="2"){
+            f.style.animationDuration=1.5+'s';
+            value1.value="3";
+            value1.style.background="teal";
+            value1.style.color="#fff";
+            value1.style.border="2px solid green";
+         }
+         else if(value1.value=="3"){
+            f.style.animationDuration=1+'s';;
+            value1.value="4";
+            value1.style.background="teal";
+            value1.style.color="#fff";
+            value1.style.border="2px solid green";
+         }
+         else{
+            value1.value="4";
+            f.style.animationDuration=0.5+'s';
+            value1.style.background="pink";
+            value1.style.color="#fff";
+            value1.style.border="2px solid teal";
+         }
+       }
+    //    function fun2(){
+    //        f.style.animationDuration=1.5+'s';
+    //    }
+    //    function fun3(){
+    //        f.style.animationDuration=1+'s';
+    //    }
+    //    function fun4(){
+    //        f.style.animationDuration=0.5+'s';
+    //    }
+    </script>
+</body>
+</html>

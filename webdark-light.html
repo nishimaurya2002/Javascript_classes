@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" type="text/css">
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+        }
+        :root{
+            --white:#fff;
+            --black:#24292d;
+            --nav-main:#4070f4;
+            --switchers-main:#0b3cc1;
+            --light-bg:#f0f8ff;
+        }
+        nav{
+          position: fixed;
+          top:0;
+          left:0;
+          height:70px;
+          width:100%;
+          background-color: var(--nav-main);
+          box-shadow: 0px 5px 10px rgba(0,0,0, .1);
+        }
+        .navbar  a{
+            font-size:30px;
+            font-weight: 500;
+            text-decoration: none;
+            color:var(--white);
+        }
+        nav .navbar{
+            height:100%;
+            max-width: 1300px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin:auto;
+            padding: 0px 30px;
+        }
+        .navbar .nav-links{
+             display: flex;
+        }
+        .navbar .nav-links li{
+            list-style: none;
+            margin: 0 8px;
+          
+        }
+        .navbar .nav-links li a{
+            font-size: 18px;
+            font-weight: 400;
+            color: var(--white);
+            opacity: 0.9;
+        }
+        .navbar .nav-links li a:hover{
+            opacity: 1;
+        }
+        .navbar .icon-box{
+            display: flex;
+            align-items: center;
+        }
+        .icon-box .light-dark,
+        .icon-box .color-icon .icon{
+            height: 50px;
+            width:50px;
+            text-align: center;
+            line-height: 50px;
+            font-size: 20px;
+            color: var(--white);
+            margin: 0px 10px;
+            border-radius: 6px;
+            background-color: var(--switchers-main);
+            opacity: 0.8;
+            cursor: pointer;
+        }
+        .icon-box .color-icon {
+            position: relative;
+        }
+        .icon-box .color-icon .icon{
+            width: 70px;
+        }
+        .icon-box .light-dark:hover,
+        .icon-box .color-icon .icon:hover{
+           opacity: 1;
+        }
+        .icon-box .color-icon .color-box{
+           position: absolute;
+          bottom: -133px;
+          right:0px;
+          min-height: 100px;
+          background-color: var(--white);
+          padding: 16px 20px 20px 20px;
+          border-radius: 6px;
+          box-shadow: 0px 5px 10px rgba(0,0,0, .2);
+          /* opacity: 0;
+          pointer-events: none; */
+        }
+        .color-icon.open .color-box{
+            opacity: 1;
+          pointer-events: auto;
+        }
+        .color-icon.open .arrow{
+            transform: rotate(-180deg);
+        }
+
+        
+        .color-icon .color-box::before{
+                content: '';
+                position: absolute;
+                top:-10px;
+                right:20px;
+                height:30px;
+                width:30px;
+                border-radius: 50%;
+                background-color: var(--white);
+        }
+        .color-icon .color-box h3{
+            display: inline-block;
+            white-space: nowrap;
+            font-size: 16px;
+            font-weight: 600;
+            width: 100%;
+            text-align: left;
+            margin-bottom: 10px;
+        }
+        .color-box .color-switchers{
+            display: flex;
+        } 
+        .color-box .color-switchers .btn{
+            display: inline-block;
+            width:40px;
+            height:40px;
+            outline: none;
+            border:none;
+            border-radius: 50%;
+            background-color: var(--nav-main);
+            margin: 0px 5px;
+        }
+        .color-switchers .btn.active{
+            box-shadow: 0 0 0 2px #fff,0 0 0 4px var(--nav-main);
+        }
+        .color-switchers .btn.orange{
+            background-color: #FF5F00;
+        }
+        .color-switchers .btn.orange.active{
+            box-shadow: 0 0 0 2px #fff,0 0 0 4px #FF5F00;
+        }
+        .color-switchers .btn.yellow{
+            background-color: #FFDB5C;
+        }
+        .color-switchers .btn.yellow.active{
+            box-shadow: 0 0 0 2px #fff,0 0 0 4px #FFDB5C;
+        }
+        .color-switchers .btn.teal{
+            background-color: #135D66;
+        }
+        .color-switchers .btn.teal.active{
+            box-shadow: 0 0 0 2px #fff,0 0 0 4px #135D66;
+        }
+        .content-box{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            height:100vh;
+            width:100%;
+            padding: 0px 60px;
+            background-color: var(--light-bg);
+        }
+        .content-box h2{
+              font-size: 40px;
+        }
+        .content-box h3{
+              font-size: 35px;
+        }
+        .content-box h2 span{
+              color:var(--nav-main)
+        } 
+        .content-box p{
+            font-size: 14px;
+            width:40%;
+            margin-bottom: 30px;
+        }
+        .content-box a{
+            font-size: 18px;
+            background-color:var(--switchers-main);
+            color:var(--white);
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+        }
+        .content-box a:hover{
+            background-color:var(--nav-main);
+        }
+        .content-box a i{
+            transform: rotate(45deg);
+        }
+        @media (max-width:1100px) {
+            .content-box p{
+            font-size: 14px;
+            width:70%;
+        }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="navbar">
+            <div class="logo"><a href="#">CodingLab</a></div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Skills</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <div class="icon-box">
+                <div class="light-dark">
+                    <i class="fa-solid fa-moon"></i>
+                </div>
+                <div class="color-icon open">
+                    <div class="icon">
+                        <i class="fa-solid fa-palette"></i>
+                        <i class="fa-solid fa-sort-down arrow"></i>
+                    </div>
+                    <div class="color-box">
+                        <h3> Color Switcher</h3>
+                        <div class="color-switchers">
+                            <button class="btn blue active" data-color="#fff #24292d #4070f4 #0b3cc1 #f0f8f"></button>
+                            <button class="btn orange" data-color="#fff #24292d #FF5F00 #5c2301 #f0f8f"></button>
+                            <button class="btn yellow" data-color="#fff #24292d #FFDB5 #5a4700 #f0f8f"></button>
+                            <button class="btn teal" data-color="#fff #24292d #135D66 #003940 #f0f8f"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <section class="content-box">
+        <texts>
+            <h2>Techsima solution Private Limited</h2>
+            <h3>With a<span>Beautiful colours.....</span></h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate suscipit tenetur consectetur nulla hic, laudantium adipisci eligendi nemo at? Culpa itaque sit consectetur.</p>
+            <div class="button">
+                <a href="#">Explroe
+                    <i class="fa-solid fa-location-arrow"></i>
+                </a>
+            </div>
+        </texts>
+
+    </section>
+<!-- ------js code-----------   -->
+    <script>
+    let colorIcon=document.querySelector(".color-icon");
+    let Icons=document.querySelector(".color-icon .icon");
+
+    Icons.addEventListener("click",()=>{
+       colorIcon.classList.toggle("open");
+    })
+    let buttons=document.querySelectorAll(".btn");
+    for(var button of buttons){
+       button.addEventListener("click",(e)=>{
+
+        let target=e.target;
+        let open=document.querySelector(".open");
+        if(open) open.classList.remove("open");
+
+        document.querySelector(".active").classList.remove("active");
+        target.classList.add("active");
+
+        let root=document.querySelector(":root");
+        let datacolor=target.getAttribute("data-color");
+        color=datacolor.split("");
+        
+        root.style.setProperty("--white",color[0]);
+        root.style.setProperty("--black",color[1]);
+        root.style.setProperty("--nav-main",color[2]);
+        root.style.setProperty("--switchers-main",color[3]);
+        let iconNmae=target.className.split("")[2];
+
+        if(target.classList.contains("fa-moon")){
+            target.classList.replace(iconName,("fa-sun"));
+            colorIcon.style.disply="none";
+    
+        }else if(target.classList.contains("fa-sun")){
+            colorIcon.style.disply="block";
+            document.querySelector(".btn.blue").click();
+        }
+       })
+    }
+  
+    </script>
+</body>
+</html>

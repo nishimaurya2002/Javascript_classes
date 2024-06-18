@@ -1,0 +1,30 @@
+<!-- <script>
+    //Arrow function
+    const arrow=(name,add)=>{
+    document.write(name, "<br>",add);
+    }
+    arrow('hello!','Ayodhya');
+</script> -->
+
+<!-- <script>
+    //// check a vowels
+    function countVowels(str){
+        for(const char of str){
+            document.write(char);
+        }
+    }
+    countVowels("Techsiam");
+</script> -->
+<script>
+    function countVowels(str){
+        let count=0;
+        for(const char of str){
+            if(char==="a"||char==="e"||char==="i"||char==="o"||char==="u"){
+                count ++;
+            }
+           
+        }
+        document.write(count);
+    }
+    countVowels("Techsiam");
+</script>

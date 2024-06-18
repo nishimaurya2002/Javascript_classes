@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin:0;
+            box-sizing: border-box;
+        }
+        .btn-login{
+            padding: 10px 15px;
+            background-color: #000;
+            color:#fff;
+            cursor: pointer;
+        }
+        .overlay{
+            width:100%;
+            height:100vh;
+            background:rgba(0, 0, 0, 0.5);
+            position: fixed;
+            top:0%;
+            z-index: -1;
+            opacity: 0;
+            transition: 1s;
+        }
+        .showoverlay{
+            opacity: 1;
+            z-index: 1;
+        }
+        .login-form{
+            width:350px;
+            background-color: #fff;
+            padding: 30px 20px;
+            position: absolute;
+            top:-50%;
+            left:50%;
+            z-index: 9;
+            transform: translate(-50%,-50%);
+            box-shadow: 0px 0px 10px 3px #ccc;
+            transition: 2s;
+        }
+        .showlogin-form{
+            top:50%;
+         
+        }
+        .login-form span{
+            position: absolute;
+            right:0px;
+            top:0px;
+            width:30px;
+            height:30px;
+            background-color: green;
+            color:#ffffff;
+            text-align: center;
+            font-size: 23px;
+            font-weight:bold;
+            line-height: 30px;
+            cursor: pointer;
+        }
+        .login-form input{
+            width:100%;
+            height:35px;
+            margin-bottom: 15px;
+        }
+        .login-form button{
+            background-color: #000;
+            color:#fff;
+            padding: 10px 15px;
+        }
+    </style>
+</head>
+<body>
+    <button class="btn-login">Login</button>
+    <div class="overlay" onclick="closemodal()">
+    </div>
+    <div class="login-form">
+        <span>&times;</span>
+        <form action="">
+            <div>
+                <label for="">Username</label>
+                <input type="text">
+            </div>
+            <div>
+                <label for="">Password</label>
+                <input type="password">
+            </div>
+            <button>LOGIN</button>
+        </form>
+    </div>
+
+
+    <script>
+       function showmodal(){
+      document.querySelector(".overlay").classList.add('showoverlay');
+      document.querySelector(".login-form").classList.add('showlogin-form');
+       }
+       function closemodal(){
+      document.querySelector(".overlay").classList.remove('showoverlay');
+      document.querySelector(".login-form").classList.remove('showlogin-form');
+       }
+       let btn=document.querySelector(".btn-login");
+       btn.addEventListener('click',showmodal);
+
+       let c=document.querySelector("span");
+       c.addEventListener('click',closemodal);
+    </script>
+</body>
+</html>

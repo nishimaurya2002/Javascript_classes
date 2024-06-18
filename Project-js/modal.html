@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+            box-sizing: border-box;
+        }
+        body{
+           min-height:100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        #box{
+            width: 600px;
+            height:600px;
+            border:2px solid #000;
+            display: flex;
+            flex-wrap: wrap;
+            background-color: #fff;
+        }
+        .image{
+            width:189px;
+            height:189px;
+            margin:4.5px;
+        }
+        .image img{
+            height:100%;
+            width:100%;
+            object-fit: cover;
+        }
+        .overlay{
+            height:100vh;
+            width:100%;
+            background-color: rgba(0,0,0,.5);
+            position: absolute;
+            left:0;
+            top:0;
+            z-index: -1;
+        }
+        .modal{
+            height:500px;
+            width:500px;
+            border:5px solid #fff;
+           position: absolute;
+           left:50%;
+           top:50%;
+           transform: translate(-50%,-50%);
+           box-shadow:  0px 0px 10px 4px inset;
+           display: none;
+        }
+        .showoverlay{
+            z-index: 1;
+        }
+        .showmodal{
+            display: block;
+        }
+        .img1{
+            width:500px;
+            height:500px;
+            padding: 20px;
+        }
+        .img1 img{
+            height:100%;
+            width:100%;
+            object-fit: cover;
+        }
+        span{
+            position: absolute;
+            right:0;
+            top:0;
+            height:20px;
+            width:20px;
+            color:#fff;
+            text-align: center;
+            font: size 25px;
+            font-weight: bold;
+            background-color: rgb(2, 116, 108);
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay"></div>
+    <div id="box">
+        <div class="image">
+            <img src="image/1.jpg" id=im onclick="modal(this)"alt="">
+        </div>
+        <div class="image">
+            <img src="image/2.jpg" id=im onclick="modal(this)"alt="">
+        </div>
+        <div class="image">
+            <img src="image/3.jpg" id=im onclick="modal(this)"alt="">
+        </div>
+        <div class="image">
+            <img src="image/5.jpg" id=im onclick="modal(this)"alt="">
+        </div>
+        <div class="image">
+            <img src="image/6.jpg" id=im onclick="modal(this)"alt="">
+        </div>
+        <div class="image">
+            <img src="image/7.jpg" id=im onclick="modal(this)"alt="">
+        </div>
+        <div class="image">
+            <img src="image/8.jpg" id=im onclick="modal(this)"alt="">
+        </div>
+        <div class="image">
+            <img src="image/12.jpg" id=im onclick="modal(this)"alt="">
+        </div>
+        <div class="image">
+            <img src="image/10.jpg" id=im onclick="modal(this)"alt="">
+        </div>
+    </div>
+   <div class="modal">
+          <!-- <span onclick="modalclase()">&times;</span> -->
+          <a href="" style="color:#fff">close</a>
+           <div class="img1">
+            <img src="image/1.jpg" alt="" id="im1">
+           </div>
+   </div>
+
+
+
+   <script>
+          function modal(x){
+              let image=document.querySelector(".modal");    
+             image.style.display="block";
+             document.querySelector("#im1").src=x.src;
+
+            }
+
+   </script>
+</body>
+</html>

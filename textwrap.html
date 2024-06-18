@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            border:10px solid #f00;
+            text-align: center;
+            color:green;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="txt1">Tcehsima</h1>
+    <h1 id="txt2">Solution</h1>
+    <button onclick="wrap()">Text Wrap</button>
+    <script>
+       //style perporty:-
+       const wrap=()=>{
+        let t1=document.querySelector("#txt1");
+        let t2=document.querySelector("#txt2");
+        let b=document.querySelector("button");
+        let val1=t1.innerHTML;
+        let val2=t2.innerHTML;
+        t2.innerHTML=val1;
+        t1.innerHTML=val2;
+
+
+        t1.style.background="teal";
+        b.style.background="teal";
+        b.style.border="2px solid purpal";
+        b.style.color="#fff";
+        t1.style.color="#fff";
+
+       }
+    </script>
+</body>
+</html>

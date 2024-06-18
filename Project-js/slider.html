@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            position: relative;
+            
+        }
+        #box{
+            width:500px;
+            height:300px;
+            border:2px solid #000;
+            background-color: rgba(167, 92, 92, 0.6);
+            position: absolute;
+            top:0;
+            left:0;
+            
+           
+        }
+        h2{
+            text-align: center;
+            margin:100px auto;
+          
+        }
+        
+        img{
+            width:500px;
+            height:300px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+      <h2 id="h1">Techsima</h2>
+    </div>
+    <img src="image/1.jpg" id="im">
+    <script>
+        let arr=['2.jpg','3.jpg','4.jpg','5.jpg','6.jpg'];
+        let rgb=['rgba(167, 92, 92, 0.6)','rgba(149, 244, 127, 0.6)','rgba(127, 221, 244, 0.6)', 'rgba(244, 127, 244, 0.6)','rgba(251, 251, 22, 0.6)'];
+        let h=['code','your','way','upto',"the peak"];
+        let headcolor=['red','#fff','blue','pink','yellow'];
+        i=0;
+        function demo(){
+            let img1=document.querySelector("#im");
+            let color=document.querySelector('#box'); 
+            let heading=document.querySelector('#h1');           
+            img1.src="image/"+arr[i];
+            color.style.background=rgb[i];
+            heading.innerHTML=h[i];
+           heading.style.color=headcolor[i];
+            i++;
+            if(i==arr.length){
+                i=0;
+            }
+        }
+        window.setInterval("demo()",2000);
+    </script>
+</body>
+</html>

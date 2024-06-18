@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<!-- ------------------onkeypress---------------------------- -->
+    <!-- <input onkeypress="demo()"    type="text" id="txt">
+    <p id="error"></p> -->
+    <!-- <script>
+        function demo(){
+            let t=document.querySelector("#txt");
+            let msg=document.querySelector("#error");
+            if(t.value.length==5){
+                t.style.border="10px solid green";
+                msg.innerHTML="valid pin code";
+                msg.style.color="green";
+                t.style.outline="2px solid yellow";
+            }
+            else{
+                t.style.border="10px solid red";
+                msg.innerHTML="Invalid pin code";
+                msg.style.color="red";
+                t.style.outline="2px solid yellow";
+            }
+        }
+    </script> -->
+<!-- ------------------onkeyup---------------------------- -->
+    <input onkeyup="demo()" type="text" id="txt">
+    <p id="error"></p>
+
+    <script>
+        function demo(){
+            let t=document.querySelector("#txt");
+            let msg=document.querySelector("#error");
+            if(t.value.length==5){
+                t.style.border="10px solid green";
+                msg.innerHTML="valid pin code";
+                msg.style.color="green";
+                t.style.outline="2px solid yellow";
+            }
+            else{
+                t.style.border="10px solid red";
+                msg.innerHTML="Invalid pin code";
+                msg.style.color="red";
+                t.style.outline="2px solid yellow";
+            }
+        }
+    </script>
+</body>
+</html>

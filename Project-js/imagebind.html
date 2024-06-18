@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="image/1.jpg" id="img">
+    <button onclick="s()">click</button>
+    <script>
+    let s=()=>{
+        let image=document.querySelector("#img");
+        let im=["1.jpg","2.jpg","3.jpg","4.jpg","5.jpg","6.jpg"];
+        let back=["red","yellow","pink","purple","orange","teal"];
+        let res="<u>";
+            for(let i=0; i<im.length; i++){
+                res=res+`<li style="background:${back[i]}">${im[i]}</li>`;
+            }
+            res=res+"</ul>";
+            document.querySelector("#img").innerHTML=res;
+        }
+    </script>
+</body>
+</html>

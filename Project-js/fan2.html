@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+           padding: 0;
+           margin:0;
+           box-sizing: border-box;
+        }
+        body{
+            width:100vw;
+            height:100vh;
+            display: flex;
+            justify-content: center;
+            
+        }
+        .img-box{
+            width:200px;
+            height:200px;
+            border:5px solid #000;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            position: relative;
+            z-index: 1;
+            
+        }
+         img{
+             animation: fan linear infinite;
+        } 
+        @keyframes fan{
+            from{
+                transform: rotate(-360deg);
+            }
+        }
+        .fan{
+            width:20px;
+            height:200px;
+            border: 5px solid #000;
+            position: absolute;
+            top:187px;
+            /* left:49px; */
+            z-index: -1;
+            
+        }
+        .btn-box{
+            /* display: flex;
+            justify-content: center;
+            align-items: center; */
+            width:300px;
+            height:100px;
+            background-color: aqua;
+            position: absolute;
+            top:309px;
+            /* left:40px; */
+            padding:30px 0px;
+        }
+      button{
+            width:30px;
+            height:30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            float: inline-start;
+            margin: 10px 10px;
+            background-color: rgb(241, 134, 207);
+            color:#fff;
+            border:none
+        }
+    </style>
+</head>
+<body>
+    <div class="img-box">
+    <img src="image/fan.png" alt="" id="im">
+    </div>
+    <div class="fan"></div>
+    <div class="btn-box">
+    <button onclick="funOn()">ON</button>
+    <button onclick="funOff()">OFF</button>
+    <button onclick="fun1()">1</button>
+    <button onclick="fun2()">2</button>
+    <button onclick="fun3()">3</button>
+    <button onclick="fun4()">4</button>
+    </div>
+    <script>
+        let f=document.getElementById("im");
+        function funOn(){
+           f.style.animationDuration=3+'s';
+        }
+        function funOff(){
+           f.style.animationDuration=0+'s';
+        }
+        function fun1(){
+           f.style.animationDuration=2+'s';
+        }
+        function fun2(){
+           f.style.animationDuration=1.5+'s';
+        }
+        function fun3(){
+           f.style.animationDuration=1+'s';
+        }
+        function fun4(){
+           f.style.animationDuration=0.5+'s';
+        }
+    </script>
+</body>
+</html>

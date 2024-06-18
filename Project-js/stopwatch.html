@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin:0;
+            box-sizing: border-box;
+        }
+        body{
+            height:100vh;
+            width:100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #0000;
+        }
+        h1{
+            font-size: 40px;
+            font-weight: 600;
+            text-align: center;
+            color:#f5d905;
+            margin: 200px 0px;
+        }
+        .box{
+            width:350px;
+            height:200px;
+            border-radius: 10px;
+            background-color: #6d94ff;
+            box-shadow:0 9px 18px -6px black;
+            font-size:30px;
+            font-weight: 600;
+        }
+        .box .stopwatch{
+            width:250px;
+            height:80px;
+            background-color: #ffff;
+            border-radius: 10px;
+            box-shadow:  inset 5px 5px 23px #565656;
+            padding-top: 28px;
+            text-align: center;
+            margin: 20px 45px 20px 45px;
+        }
+        .box .btn-box{
+            width:250px;
+            height:50px;
+            background-color: #f5d905;
+            margin: 20px 45px 20px 45px;
+            box-shadow:  inset 5px 5px 23px #ffffff;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-evenly;
+        }
+        .btn-box button{
+            margin: 12px;
+            padding: 5px 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="stopwatch">
+           <span id="h"> 00 </span>:<span id="min"> 00 </span>: <span id="sec">00</span> : <span id="milisec">00</span>
+        </div>
+        <div class="btn-box">
+            <button onclick="btn1()" id="b1">Start</button>
+            <button onclick="btn2()" id="b2">Stop</button>
+            <button onclick="btn3()" id="b3">Reset</button>
+        </div>
+    </div>
+    <script>
+        let h=0;
+        let min=0;
+        let sec=0;
+        let milisec=0;
+
+        let timer=false;
+
+        function btn1(){
+            timer=true;
+            demo();
+        }
+        function btn2(){
+            timer=false;
+            demo();
+        }
+        function btn3(){
+            location.reload();
+        }
+        function demo(){
+           
+            if(timer==true){
+                milisec= milisec+1;
+            if(milisec==100){
+                sec=sec+1;
+                milisec=0;               
+            }      
+            if(sec==60){
+                min=min+1;
+                sec=0;                
+            }        
+            if(min==60){
+                h=h+1;
+                min=0;
+            }
+            if(sec<10){
+              getsec= "0"+ sec;
+            }
+            if(min<10){
+              getmin= "0"+ min;
+            }
+            if(h<10){
+                geth="0"+h;
+            }
+            setTimeout("demo()",.1);
+            document.querySelector("#milisec").innerHTML=milisec; 
+            document.querySelector("#sec").innerHTML=getsec;  
+            document.querySelector("#min").innerHTML=getmin;   
+            document.querySelector("#h").innerHTML=geth;        
+        }
+       
+    }
+            
+        
+        
+
+
+
+    </script>
+</body>
+</html>

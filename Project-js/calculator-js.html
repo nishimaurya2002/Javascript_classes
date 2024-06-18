@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .calculator-box{
+            width:400px;
+            padding: 15px;
+            background-color: black;
+            border: 9px solid transparent;
+            border-image: linear-gradient(45deg, red , yellow);
+            border-image-slice: 1;
+            box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, 
+            rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, 
+            rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+            
+            margin: 100px auto;
+        }
+        h2{
+            font-size: 25px;
+            color:#fff;
+            text-align: center;
+            padding:10px 0px ;
+        }
+        input{
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            font-size: 20px;
+            text-align: right;
+            /* padding: 6px 12px; */
+                    background: rgb(31, 32, 35);
+                    border: 1px solid rgb(60, 63, 68);
+                    border-radius: 4px;
+                    font-size: 13px;
+                    color: rgb(247, 248, 248);
+                    height: 46px;
+                    appearance: none;
+                    transition: border 0.15s ease 0s;
+                    :focus{
+                        outline: none;
+                        box-shadow: none;
+                        border-color: rgb(100, 153, 255);
+                    }
+                
+        }
+        .btn-box{
+            display: flex;
+            justify-content:space-around;;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        button{
+            padding: 20px;
+            margin: 15px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+             cursor: pointer; 
+            background-color: #eaeaeb;
+            box-shadow: -20px 1px 91px 0px #ffffff;
+        }
+        button:hover{
+            background-image:linear-gradient(teal ,pink,green);
+           box-shadow: 10px 2px 70px 0px #5c085c;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator-box">
+        <h2>Calculator</h2>
+         <input type="text" id="result">
+         <div class="btn-box">
+            <button onclick="allclear()">AC</button>
+            <button onclick="add(this)">%</button>
+            <button onclick="clear()">D</button>
+            <button onclick="add(this)">/</button>
+            <button onclick="add(this)">7</button>
+            <button onclick="add(this)">8</button>
+            <button onclick="add(this)">9</button>
+            <button onclick="add(this)">*</button>
+            <button onclick="add(this)">4</button>
+            <button onclick="add(this)">5</button>
+            <button onclick="add(this)">6</button>
+            <button onclick="add(this)">-</button>
+            <button onclick="add(this)">1</button>
+            <button onclick="add(this)">2</button>
+            <button onclick="add(this)">3</button>
+            <button onclick="add(this)">+</button>
+            <button onclick="add(this)">00</button>
+            <button onclick="add(this)">0</button>
+            <button onclick="add(this)">.</button>
+            <button style="background-color:chocolate;" onclick="calculate()">=</button>
+         </div>
+    </div>
+    <script>
+         let add=(x)=>{
+             let add=document.querySelector("#result");
+             add.value+=x.innerHTML;
+         }
+         let calculate=()=>{
+            let c=document.querySelector("#result").value;
+            let res=eval(c);
+            document.querySelector("#result").value=res;
+         }
+         let allclear=()=>{
+            let a=document.querySelector("#result").value=" ";
+         }
+         let clear=()=>{
+        let d=document.querySelector("#result").value;
+        let erese="";
+        for(let i=0; i<d.length-1; i++){
+           erese=erese+d[i]; 
+        }
+        document.querySelector("#result").value=erese;
+       }
+    </script>
+</body>
+</html>

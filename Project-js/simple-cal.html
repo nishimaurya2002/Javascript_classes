@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="f">
+    <select id="op">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">x</option>
+        <option value="/">/</option>
+    </select>
+    <input type="number" id="s"><br>
+    <button onclick="cal()">calculate</button>
+    <input type="text" id="res">
+    <script>
+        let cal=()=>{
+          let n1=Number(document.querySelector("#f").value);
+          let n2=Number(document.querySelector("#s").value);
+          let op=document.querySelector("#op").value;
+          if(op =='+'){
+            var res = n1 + n2;
+          }
+          if(op =='-'){
+            var res = n1 - n2;
+          }
+          if(op =='*'){
+            var  res = n1 * n2;
+          }
+          if(op =='/'){
+            var res =n1 /n2;
+          }
+          document.getElementById("res").value=res;
+        }
+    </script>
+</body>
+</html>

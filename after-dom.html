@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+       <!-- <div></div> 
+    techsima
+    <p id="para">Tcehsima</p>
+    <button onclick="demo()">after node</button> -->
+<!--       
+       <script>
+// ----------------after---------------------------------------------    
+
+        // function demo(){
+        //     // let node1=document.querySelector("li");
+        //     // alert(node1.innerHTML);
+        //       let node1=document.createElement("div");
+        //       let para=document.createElement("p");
+        //       node1.append(para);
+        //       para.after("solution");
+        //       document.querySelector("#para").after(node1.innerHTML);        
+        // }
+       </script> -->
+       <!-- <script>
+        
+        // ----------------before----------------------------------------------    
+
+        function demo(){
+                    // let node1=document.querySelector("li");
+                    // alert(node1.innerHTML);
+                    let node1=document.createElement("div");
+                    let para=document.createElement("p");
+                    node1.append(para);
+                    para.before("solution");
+                    document.querySelector("#para").before(node1.innerHTML);        
+                 }
+      </script> -->
+
+<!-- --------------remove element-------------------- -->
+
+      <p>Tcehsima solution Private Limited</p>
+      <button id="b">Remove</button>
+      <script>
+        let btn=document.querySelector("#b");
+        btn.addEventListener("click",()=>{
+           let para=document.querySelector("p");
+           para.remove();
+        })
+      </script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAPTCHA Example</title>
+    <style>
+        .captcha {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <form id="captchaForm">
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <div class="form-group">
+            <div id="captcha" class="captcha"></div>
+            <label for="captchaInput">Enter CAPTCHA:</label>
+            <input type="text" id="captchaInput" name="captchaInput" required>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    const captchaForm = document.getElementById('captchaForm');
+    const captchaElement = document.getElementById('captcha');
+    const captchaInput = document.getElementById('captchaInput');
+    
+    function generateCaptcha() {
+        const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        let captchaText = '';
+        for (let i = 0; i < 6; i++) {
+            captchaText += chars.charAt(Math.floor(Math.random() * chars.length));
+        }
+        return captchaText;
+    }
+
+    function displayCaptcha() {
+        const captchaText = generateCaptcha();
+        captchaElement.textContent = captchaText;
+        captchaElement.dataset.captcha = captchaText;
+    }
+
+    displayCaptcha();
+
+    captchaForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const enteredCaptcha = captchaInput.value;
+        const generatedCaptcha = captchaElement.dataset.captcha;
+
+        if (enteredCaptcha === generatedCaptcha) {
+            alert('CAPTCHA validation successful!');
+            // You can proceed with form submission here
+        } else {
+            alert('CAPTCHA validation failed. Please try again.');
+            displayCaptcha();
+        }
+    });
+});
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+        padding:0px;
+        margin:0px;
+        box-sizing:border-box;
+        }
+        body{
+          background-color: #fff;
+          /* display: none; */
+        }
+        img{
+          border:2px solid #00f;
+          background-color: #fff;
+          width:200px;
+          height:200px;
+        }
+    </style>
+</head>
+<body>
+  <img src="image/light.png" onclick="demo()" id="im" value="light">
+  <!-- <img src="image/dark.png" onclick="demo()" id="im1"> -->
+  <!-- <img src="image/dark.png"> -->
+  <script>
+    function demo(){
+        let im1=document.getElementById("im");
+       let b=document.querySelector("body");
+        if(im1.value=="light"){
+            im1.src="image/dark.png";
+            im1.value="dark";
+            b.style.background="#000"; 
+         }
+         else{
+            im1.src="image/light.png";
+            im1.value="light";
+            b.style.background="#fff";
+         }   
+    };
+    
+  </script>
+</body>
+</html>

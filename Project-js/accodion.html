@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-bottom: 10px;
+        }
+        .accodion {
+            width: 450px;
+            border: 5px solid #064ec0;
+        }
+        .accodion-item {
+            margin: 10px;
+        }
+        .accodion-title {
+            background-color: chocolate;
+            color: #fff;
+            padding: 10px;
+            font-size: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all ease 2s ;
+        }
+        .accodion-title:hover {
+            background-color: darkgoldenrod;
+            color: black;
+        }
+        .accodion-content {
+            padding: 10px;
+            background-color: rgb(227, 177, 252);
+            display: none;
+           
+        }
+        .active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Accordion</h1>
+    <div class="accodion">
+        <div class="accodion-item">
+            <div class="accodion-title">Accordion 1</div>
+            <div class="accodion-content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. In mollitia quod temporibus molestiae, ullam officia odio cum dolorem iusto facilis aliquam neque dolor ipsa aut eum, quisquam quae ipsum corporis.</p>
+            </div>
+        </div>
+        <div class="accodion-item">
+            <div class="accodion-title">Accordion 2</div>
+            <div class="accodion-content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. In mollitia quod temporibus molestiae, ullam officia odio cum dolorem iusto facilis aliquam neque dolor ipsa aut eum, quisquam quae ipsum corporis.</p>
+            </div>
+        </div>
+        <div class="accodion-item">
+            <div class="accodion-title">Accordion 3</div>
+            <div class="accodion-content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. In mollitia quod temporibus molestiae, ullam officia odio cum dolorem iusto facilis aliquam neque dolor ipsa aut eum, quisquam quae ipsum corporis.</p>
+            </div>
+        </div>
+        <div class="accodion-item">
+            <div class="accodion-title">Accordion 4</div>
+            <div class="accodion-content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. In mollitia quod temporibus molestiae, ullam officia odio cum dolorem iusto facilis aliquam neque dolor ipsa aut eum, quisquam quae ipsum corporis.</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        var acc = document.getElementsByClassName("accodion-title");
+        for (var i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var title = this.nextElementSibling;
+                if (title.style.display === "block") {
+                    title.style.display = "none";
+                } else {
+                    title.style.display = "block";
+                }
+            });
+        }
+    </script>
+</body>
+</html>

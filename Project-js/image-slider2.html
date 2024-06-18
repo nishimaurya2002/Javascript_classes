@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" type="text/css">
+    <style>
+        *{
+            padding: 0;
+            margin:0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height:100vh;
+        }
+        .box{
+           width:300px;
+           height:300px;
+           border:2px solid #000;
+           position: relative;
+           overflow: hidden;
+        
+          
+        }
+        img{
+            width:100%;
+            height:100%;
+            position: absolute;
+            transition: 1s;
+           
+        }
+        button{
+            width:40px ;
+            height:20px;
+     
+        }   
+        #btn1{
+            position: absolute;
+            top:160px;
+            left:0;
+        }
+        #btn2{
+            position: absolute;
+            top:160px;
+            right:0;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+       
+        <img src="image/1.jpg" class="slide" alt="">
+        <img src="image/2.jpg"  class="slide" alt="">
+        <img src="image/4.jpg"  class="slide" alt="">
+        <img src="image/5.jpg"  class="slide" alt="">
+        <img src="image/3.jpg" class="slide" alt="">
+        <button id="btn2" onclick="goNext()"><i class="fa-solid fa-angle-left"></i></button>
+        <button  id="btn1" onclick="goPrev()"><i class="fa-solid fa-angle-right"></i></button>
+    </div>
+    <script>
+        const slider=document.querySelectorAll(".slide");
+        var res=0;
+        slider.forEach(
+            (slide, index) => {
+            slide.style.left=`${index * 100}% `
+         }
+        )
+        const goNext=()=>{
+            res++;
+            slideImage();
+         }
+         const goPrev=()=>{
+            res--;            
+            slideImage();
+         }
+        const slideImage=()=>{
+            slider.forEach(
+                (slide)=>{
+                    slide.style .transform=`translateX(-${res*100}%)`;
+                }
+            )
+            if(res==slider.length-1){
+                res=0;
+            }
+        }
+
+    </script>
+</body>
+</html>

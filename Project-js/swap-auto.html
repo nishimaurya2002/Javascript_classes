@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width:300px;
+            height:300px;
+        }
+    </style>
+</head>
+<body>
+    <img src="image/13.jpg" alt="" id="im">
+    <!-- <img src="image/1.jpg" alt="" id="im2"> -->
+    <button id="btn1" onclick="d1()">Swap</button>
+    <button id="btn2" onclick="d2()">Start</button>
+    <button id="btn3" onclick="d3()">Stop</button>
+    <script>
+        let img1=document.querySelector("#im");
+        let b1=document.querySelector("#btn1");
+        //let b2=document.querySel++ector("#btn2");
+       function d1(){
+            if(img1.src.endsWith("13.jpg")){
+                img1.src="image/3.jpg";
+                img1.style.border="2px solid #00f";
+            }
+            else{
+                img1.src="image/13.jpg";
+                img1.style.border="2px solid #ff0";
+            }  
+        };
+        function d2(){
+         stop=window.setInterval("d1()",1000);
+        };
+        // function d2(){
+        //  window.setTimeout("d1()",1000);//ek bar hi chalta hai
+        // };
+        function d3(){
+            window.clearInterval(stop);
+        }
+    </script>
+</body>
+</html>

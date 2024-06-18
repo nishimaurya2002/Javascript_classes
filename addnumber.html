@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    num1<input type="text" id="n1">
+    num2<input type="text" id="n2">
+    operator<input type="text" id="op">
+    <input type="submit" onmouseover="sum()" value="Get Result">
+    <h1 id="result"></h1>
+    <script>
+        let sum=()=>{
+            let num1=document.querySelector("#n1").value;
+            let num2=document.querySelector("#n2").value;
+           alert(Number(num1)+Number(num2));
+           let res=document.querySelector("#result");
+         
+           res.innerHTML="This is  result is add:"+"<mark>"+(Number(num1)+Number(num2))+"</mark>";
+             
+
+        }
+    </script>
+</body>
+</html>

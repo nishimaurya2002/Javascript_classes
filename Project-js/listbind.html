@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="sd"></h1>
+    <button onclick="s()">click</button>
+    <script>
+    let s=()=>{
+        let std=["Ram","Manish","Rani","Raj","jack","john"];
+        let back=["red","yellow","pink","purple","orange","teal"];
+        let res="<u>";
+            for(let i=0; i<std.length; i++){
+                res=res+`<li style="background:${back[i]}">${std[i]}</li>`;
+            }
+            res=res+"</ul>";
+            document.querySelector("#sd").innerHTML=res;
+        }
+    </script>
+</body>
+</html>

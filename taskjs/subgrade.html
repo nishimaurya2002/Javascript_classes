@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         var s1=Number(prompt("Enter the s1 nuber"))
+         var s2=Number(prompt("Enter the s2 nuber"))
+         var s3=Number(prompt("Enter the s3 nuber"))
+         var s4=Number(prompt("Enter the s4 nuber")) 
+         var s5=Number(prompt("Enter the s5 nuber"))
+
+         let sum=s1+s2+s3+s4+s5;
+         document.write("Total number of sub:"+sum+"<br>")
+
+         let avg=sum/5;
+         document.write("Avg of sub:"+avg+"<br>")
+
+         let percent=sum*100/500;
+         document.write("percentage of sub:"+percent+"<br>")
+
+        
+
+         if(percent>=60){
+            document.write("first"+ "<br>")
+         }
+         else if(percent>=45 && percent<60){
+            document.write("second"+ "<br>")
+         }
+         else if(percent>=33 && percent<45){
+            document.write("third"+ "<br>")
+         }
+         else{
+            document.write("fail"+ "<br>")
+         }
+    </script>
+</body>
+</html>

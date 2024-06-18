@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100%;
+            margin: 10%;
+        }
+        .container{
+            width:768px;
+            max-width:100%;
+            min-height: 480px;
+            background: #acacac;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 14px 28px rgb(0,0,0,0,25),
+                        0 10px 10px rgb(0,0,0,0,22);
+        }
+        .sign-up .sign-in{
+              position: absolute;
+              top:0;
+              left:0;
+              height:100%;
+              transition: all 0.6s ease-in-out;
+        }
+        .sign-up{
+            width:50%;
+            opacity: 0;
+            z-index: 1;
+        }
+        .sign-in{
+            width:50%;
+            z-index: 2;
+        }
+        form{
+             background: #fff;
+             display: flex;
+             justify-content: center;
+             align-items: center;
+             height:100%;
+             padding: 0px 50px;
+             text-align: center;
+        }
+        h1{
+            font-weight: bold;
+            margin: 0;
+        }
+        p{
+            font-size: 14px;
+            font-weight: 100;
+            line-height: 20px;
+            letter-spacing: 0.5px;
+            margin: 15px 0px 30px;
+        }
+        input{
+            background: #fff;
+            padding: 12px 15px;
+            margin:8px 15px;
+            width:100%;
+            border-radius: 5ps;
+            border: none;
+            outline: none;
+        }
+        a{
+            color:#333;
+            font-size:14px;
+            text-decoration: none;
+            margin:15px 0px;
+        }
+    </style>
+</head>
+<body>
+    <div class="conatiner">
+        <div class="sign-up">
+            <form action="#">
+                <h1>Create Acount</h1>
+                <p>or use your email for registration</p>
+                <input type="text" placeholder="Name" name="text">
+                <input type="email" placeholder="Email" name="email">
+                <input type="password" placeholder="Password" name="password">
+                <button>Sign Up</button>
+            </form>
+        </div>
+        <div class="sign-in">
+            <form action="#">
+                <h1>Sign-in</h1>
+                <p>or use your acount</p>
+                <input type="email" placeholder="Email" name="email">
+                <input type="password" placeholder="Password" name="password">
+                <a href="#">forget your password?</a>
+                <button>Sign In</button>
+            </form>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-left">
+                    <h2>Wellcome back!</h2>
+                    <p>code your way up to the peak</p>
+                    <button id="signin">Sign In</button>
+                </div>
+                <div class="overlay-right">
+                    <h2>Hello! Techsima</h2>
+                    <p>code your way up to the peak</p>
+                    <button id="signup">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

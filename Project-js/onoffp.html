@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="demo()" id="btn" value="on">Plugine</button>
+    <button onclick="demo1()" id="btn2" value="off">no plugin</button>
+    <script>
+        let b=document.querySelector("#btn");
+        let b2=document.querySelector("#btn2");
+        function demo(){  
+            if(b.value=='on'){
+                b.value='off';
+                document.write("Charging on");
+            }else{
+                b.value='on';
+                document.write("Battery Low");
+            }
+        }
+        function demo1(){  
+            if(b2.value=='off'){
+                b2.value='off';
+                document.write("Battery Low you need to plugin");
+            }else{
+                b2.value='on';
+                alert("plugin");
+                document.write("Charging full");
+            }
+        }
+         
+    </script>
+</body>
+</html>

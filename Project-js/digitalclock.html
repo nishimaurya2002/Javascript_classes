@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         
+        body{
+            height:100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .clock-box{
+            height:100px;
+            width:350px;
+            background-color: aqua;
+            border-radius: 10px;
+            box-shadow: 2px 2px 2px 1px rgba(249, 0, 0, 0.2);
+        }
+        .clock-box h1{
+            text-align: center;
+            font-size: 40px;
+           color:rgb(210, 87, 30);
+        }
+        .clock-box:hover{
+            background-color: rgb(253, 241, 132);
+            box-shadow: 0 3px 10px  rgba(6, 54, 150, 0.2);
+        }
+
+    </style>
+</head>
+<body onload="clock()">
+    <div  class="clock-box">
+    <h1 id="h"></h1>
+    </div>
+    <script>
+        function clock(){
+            let d=new Date();
+            let h=d.getHours();
+            let m=d.getMinutes();
+            let s=d.getSeconds();
+            let session="AM";
+            if(h>=12){  
+                h=h-12;// this is use to logic change the format 24 hour to convert 12 hour
+            }
+            
+            if(h>12){  // change the session  this logic
+                session="PM"
+            }
+            h=h<10 ? "0" + h : h;// concatenate  the 0 in hour
+            m=m<10 ? "0" + m : m;// concatenate  the 0 in minuts
+            s=s<10 ? "0" + s : s;// concatenate  the 0 in second
+            let time=`${h} : ${m} : ${s} ${session}`;
+        //    document.write(time);
+           let printc=document.querySelector("#h");
+               printc.innerHTML=time;
+          
+        }
+        setInterval("clock()",1000);// this is use to function running per 1 sec
+    </script>
+</body>
+</html>
